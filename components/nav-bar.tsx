@@ -58,9 +58,9 @@ export default function NavBar() {
                   y2="208"
                   fill="none"
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="16"></line>
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="16"></line>
                 <line
                   x1="192"
                   y1="40"
@@ -68,9 +68,9 @@ export default function NavBar() {
                   y2="192"
                   fill="none"
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="16"></line>
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="16"></line>
               </svg>
             </a>
             <a
