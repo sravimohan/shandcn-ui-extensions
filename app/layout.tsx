@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 
 import "./globals.css"
+import "./prose-mirror.css"
 import NavBar from "@/components/nav-bar"
 import { ThemeProvider } from "@/components/theme-provider"
 

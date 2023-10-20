@@ -1,0 +1,8 @@
+.editor .ProseMirror {
+  min-height: 100px;
+  padding: 5px 10px;
+}
+
+.ProseMirror:focus {
+  outline: none;
+}

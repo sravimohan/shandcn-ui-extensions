@@ -20,7 +20,11 @@ export default function NavBar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="flex-shrink-0">shandcn/ui extensions</div>
+            <div className="flex-shrink-0">
+              <Link className="no-underline" href="/">
+                shandcn/ui extensions
+              </Link>
+            </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 <Link
@@ -37,7 +41,7 @@ export default function NavBar() {
                     "hover:bg-muted px-3 py-2 rounded-md text-sm font-medium no-underline",
                     isActive(pathname, "/editor")
                   )}>
-                  Editor
+                  Rich Text Editor
                 </Link>
               </div>
             </div>
