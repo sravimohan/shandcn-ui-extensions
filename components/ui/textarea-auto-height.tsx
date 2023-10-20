@@ -11,17 +11,19 @@ export interface TextareaAutoHeightProps
 const TextareaAutoHeight = React.forwardRef<HTMLTextAreaElement, TextareaAutoHeightProps>(
   ({ className, ...props }, ref) => {
     const mirrorId = useId()
-    const [height, setHeight] = React.useState<number | undefined>()
+    const [height, setHeight] = React.useState<number>()
+    const scrollTolerance = 6
 
     React.useEffect(() => {
-      setHeight(document?.getElementById(mirrorId)?.clientHeight)
+      const clientHeight = document?.getElementById(mirrorId)?.clientHeight ?? 0
+      setHeight(clientHeight + scrollTolerance)
     }, [mirrorId, props.value])
 
     return (
       <div className="relative">
         <textarea
           className={cn(
-            "flex min-h-[60px] w-full overflow-hidden rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+            "flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
             className
           )}
           ref={ref}
