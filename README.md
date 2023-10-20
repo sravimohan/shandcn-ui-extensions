@@ -4,4 +4,4 @@ Additional components on top of the amazing the [shandcn/ui](https://ui.shadcn.c
 
 ### Components
 - Textarea which grows in height as the user types
-- [TODO] Rich text editor built on top of [Tiptap](https://tiptap.dev/editor)
+- Rich text editor built on top of [Tiptap](https://tiptap.dev/editor)
