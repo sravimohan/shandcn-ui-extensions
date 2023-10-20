@@ -4,8 +4,8 @@ import Link from "next/link"
 
 export default function Page() {
   return (
-    <div className="flex flex-col space-y-6">
-      <article className="prose dark:prose-invert container bg-secondary/40 rounded-md p-6 mt-12">
+    <div className="flex flex-col p-6 space-y-4">
+      <article className="prose dark:prose-invert container p-12 bg-secondary/20 rounded-md">
         <p>
           Additional components on top of the amazing
           <a className="mx-1" href="https://ui.shadcn.com/" target="_blank" rel="noreferrer">

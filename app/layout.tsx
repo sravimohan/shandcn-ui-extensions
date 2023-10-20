@@ -29,7 +29,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             disableTransitionOnChange>
             <main>
               <NavBar />
-              <div className="flex flex-col items-center">{children}</div>
+              <div className="h-min-screen mx-auto max-w-2xl md:container">{children}</div>
             </main>
           </ThemeProvider>
         </body>

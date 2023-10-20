@@ -6,7 +6,6 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
@@ -54,7 +53,7 @@ export function FormatType({ editor }: FormatTypeProps) {
 
   return (
     <Select onValueChange={onChange} defaultValue={value()} value={value()}>
-      <SelectTrigger className="h-8 w-[120px]">
+      <SelectTrigger className="h-8 w-[120px] invisible sm:visible">
         <SelectValue placeholder="Select format" />
       </SelectTrigger>
       <SelectContent>
