@@ -37,10 +37,6 @@ export default function Home() {
             </a>{" "}
             documentation for more details.
           </p>
-          <p>
-            Also note, some of the shandcn/ui components used have been slightly modified to suit
-            the needs of this editor.
-          </p>
           <pre>{sample}</pre>
         </div>
       </div>
