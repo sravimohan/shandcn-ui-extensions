@@ -1,8 +1,8 @@
 "use client"
 
+import Editor from "@/components/rich-text/editor"
 import { useState } from "react"
 
-import Editor from "@/components/ui/editor/editor"
 
 export default function Home() {
   const [value, setValue] = useState("hello world ")
@@ -24,7 +24,7 @@ export default function Home() {
             <a
               className="mx-2 text-blue-500 hover:underline"
               target="_blank"
-              href="https://github.com/sravimohan/shandcn-ui-extensions/blob/main/components/ui/editor"
+              href="https://github.com/sravimohan/shandcn-ui-extensions/blob/main/components/rich-text"
               rel="noreferrer">
               component source files
             </a>

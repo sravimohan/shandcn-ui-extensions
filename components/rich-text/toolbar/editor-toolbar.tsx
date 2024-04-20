@@ -15,8 +15,9 @@ import {
 
 import { ToggleGroup, Toolbar } from "@/components/toolbar"
 
-import { Toggle } from "../../toggle"
+
 import { FormatType } from "./format-type"
+import { Toggle } from "@/components/ui/toggle"
 
 interface EditorToolbarProps {
   editor: Editor
@@ -27,9 +28,8 @@ const EditorToolbar = ({ editor }: EditorToolbarProps) => {
     <Toolbar className="m-0 flex items-center justify-between p-2" aria-label="Formatting options">
       <ToggleGroup className="flex flex-row items-center" type="multiple">
         <Toggle
-          size="icon"
+          size="sm"
           className="mr-1"
-          tooltip="Bold"
           onPressedChange={() => editor.chain().focus().toggleBold().run()}
           disabled={!editor.can().chain().focus().toggleBold().run()}
           pressed={editor.isActive("bold")}>
@@ -37,9 +37,8 @@ const EditorToolbar = ({ editor }: EditorToolbarProps) => {
         </Toggle>
 
         <Toggle
-          size="icon"
+          size="sm"
           className="mr-1"
-          tooltip="Italic"
           onPressedChange={() => editor.chain().focus().toggleItalic().run()}
           disabled={!editor.can().chain().focus().toggleItalic().run()}
           pressed={editor.isActive("italic")}
@@ -48,9 +47,8 @@ const EditorToolbar = ({ editor }: EditorToolbarProps) => {
         </Toggle>
 
         <Toggle
-          size="icon"
+          size="sm"
           className="mr-1"
-          tooltip="Strike through"
           onPressedChange={() => editor.chain().focus().toggleStrike().run()}
           disabled={!editor.can().chain().focus().toggleStrike().run()}
           pressed={editor.isActive("strike")}>
@@ -58,45 +56,40 @@ const EditorToolbar = ({ editor }: EditorToolbarProps) => {
         </Toggle>
 
         <Toggle
-          size="icon"
+          size="sm"
           className="mr-1"
-          tooltip="Bullet list"
           onPressedChange={() => editor.chain().focus().toggleBulletList().run()}
           pressed={editor.isActive("bulletList")}>
           <List className="h-4 w-4" />
         </Toggle>
 
         <Toggle
-          size="icon"
+          size="sm"
           className="mr-1"
-          tooltip="Numbered list"
           onPressedChange={() => editor.chain().focus().toggleOrderedList().run()}
           pressed={editor.isActive("orderedList")}>
           <ListOrdered className="h-4 w-4" />
         </Toggle>
 
         <Toggle
-          size="icon"
+          size="sm"
           className="mr-1"
-          tooltip="Code block"
           onPressedChange={() => editor.chain().focus().toggleCodeBlock().run()}
           pressed={editor.isActive("codeBlock")}>
           <Code className="h-4 w-4" />
         </Toggle>
 
         <Toggle
-          size="icon"
+          size="sm"
           className="mr-1"
-          tooltip="Block quote"
           onPressedChange={() => editor.chain().focus().toggleBlockquote().run()}
           pressed={editor.isActive("blockquote")}>
           <Quote className="h-4 w-4" />
         </Toggle>
 
         <Toggle
-          size="icon"
+          size="sm"
           className="mr-1"
-          tooltip="Horizontal rule"
           onPressedChange={() => editor.chain().focus().setHorizontalRule().run()}>
           <Minus className="h-4 w-4" />
         </Toggle>
@@ -106,7 +99,7 @@ const EditorToolbar = ({ editor }: EditorToolbarProps) => {
 
       <ToggleGroup className="flex flex-row items-center" type="multiple">
         <Toggle
-          size="icon"
+          size="sm"
           className="mr-1"
           onPressedChange={() => editor.chain().focus().undo().run()}
           disabled={!editor.can().chain().focus().undo().run()}>
@@ -114,7 +107,7 @@ const EditorToolbar = ({ editor }: EditorToolbarProps) => {
         </Toggle>
 
         <Toggle
-          size="icon"
+          size="sm"
           className="mr-1"
           onPressedChange={() => editor.chain().focus().redo().run()}
           disabled={!editor.can().chain().focus().redo().run()}>

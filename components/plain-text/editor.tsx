@@ -4,6 +4,7 @@ import * as React from "react"
 import { useId } from "react"
 
 import { cn } from "@/lib/utils"
+import { Textarea } from "../ui/textarea"
 
 export interface TextareaAutoHeightProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
@@ -12,18 +13,20 @@ const TextareaAutoHeight = React.forwardRef<HTMLTextAreaElement, TextareaAutoHei
   ({ className, ...props }, ref) => {
     const mirrorId = useId()
     const [height, setHeight] = React.useState<number>()
-    const scrollTolerance = 6
+    const scrollTolerance = 15
 
     React.useEffect(() => {
       const clientHeight = document?.getElementById(mirrorId)?.clientHeight ?? 0
       setHeight(clientHeight + scrollTolerance)
     }, [mirrorId, props.value])
 
+    const baseClassname = ""
+
     return (
       <div className="relative w-full">
-        <textarea
+        <Textarea
           className={cn(
-            "flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+            "overflow-hidden",
             className
           )}
           ref={ref}
@@ -35,11 +38,11 @@ const TextareaAutoHeight = React.forwardRef<HTMLTextAreaElement, TextareaAutoHei
         <div
           id={mirrorId}
           className={cn(
-            "flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
-            className,
-            "pointer-events-none invisible absolute left-0 top-0 pb-6"
+            "whitespace-pre-wrap absolute top-0 left-0 invisible",
+            baseClassname,
+            className
           )}>
-          {props.value}
+          {props.value}&nbsp;
         </div>
       </div>
     )
