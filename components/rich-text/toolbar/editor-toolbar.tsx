@@ -13,11 +13,10 @@ import {
   Undo,
 } from "lucide-react"
 
+import { Toggle } from "@/components/ui/toggle"
 import { ToggleGroup, Toolbar } from "@/components/toolbar"
 
-
 import { FormatType } from "./format-type"
-import { Toggle } from "@/components/ui/toggle"
 
 interface EditorToolbarProps {
   editor: Editor
@@ -97,7 +96,7 @@ const EditorToolbar = ({ editor }: EditorToolbarProps) => {
         <FormatType editor={editor} />
       </ToggleGroup>
 
-      <ToggleGroup className="flex flex-row items-center" type="multiple">
+      <ToggleGroup className="flex flex-row items-center invisible sm:visible" type="multiple">
         <Toggle
           size="sm"
           className="mr-1"

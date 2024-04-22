@@ -1,8 +1,8 @@
 "use client"
 
-import Editor from "@/components/rich-text/editor"
 import { useState } from "react"
 
+import Editor from "@/components/rich-text/editor"
 
 export default function Home() {
   const [value, setValue] = useState("hello world ")

@@ -4,12 +4,12 @@ import * as React from "react"
 import { useId } from "react"
 
 import { cn } from "@/lib/utils"
+
 import { Textarea } from "../ui/textarea"
 
-export interface TextareaAutoHeightProps
-  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
+export interface EditorProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
-const TextareaAutoHeight = React.forwardRef<HTMLTextAreaElement, TextareaAutoHeightProps>(
+const Editor = React.forwardRef<HTMLTextAreaElement, EditorProps>(
   ({ className, ...props }, ref) => {
     const mirrorId = useId()
     const [height, setHeight] = React.useState<number>()
@@ -25,10 +25,7 @@ const TextareaAutoHeight = React.forwardRef<HTMLTextAreaElement, TextareaAutoHei
     return (
       <div className="relative w-full">
         <Textarea
-          className={cn(
-            "overflow-hidden",
-            className
-          )}
+          className={cn("overflow-hidden", className)}
           ref={ref}
           style={{
             height: `${height}px`,
@@ -48,6 +45,6 @@ const TextareaAutoHeight = React.forwardRef<HTMLTextAreaElement, TextareaAutoHei
     )
   }
 )
-TextareaAutoHeight.displayName = "TextareaAutoHeight"
+Editor.displayName = "Editor"
 
-export { TextareaAutoHeight }
+export { Editor }

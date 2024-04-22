@@ -2,13 +2,13 @@
 
 import { useId, useState } from "react"
 
-import { TextareaAutoHeight } from "@/components/plain-text/editor"
+import { Editor } from "@/components/plain-text/editor"
 
 export default function Home() {
   const postTextAreaId = useId()
   const [value, setValue] = useState("hello world ")
 
-  const sample = `<TextareaAutoHeight
+  const sample = `<Editor
     id={postTextAreaId}
     name="sample"
     value={value}
@@ -22,7 +22,7 @@ export default function Home() {
         <label className="prose-lg font-bold" htmlFor={postTextAreaId}>
           Try typing a long message
         </label>
-        <TextareaAutoHeight
+        <Editor
           id={postTextAreaId}
           name="sample"
           value={value}
